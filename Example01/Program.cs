@@ -7,10 +7,12 @@
 // 8 7,8 -7,1 9
 
 Console.Clear();
-PrintArray(CreateRandom2DArray(3, 4));
+PrintArray(CreateRandom2DArray());
 
-double[,] CreateRandom2DArray(int countOfRow, int countOfColums)
+double[,] CreateRandom2DArray()
 {
+    int countOfRow = Common.Helper.IntoInt();
+    int countOfColums = Common.Helper.IntoInt();
     double[,] array = new double[countOfRow, countOfColums];
     Random random = new Random();
 
@@ -18,7 +20,7 @@ double[,] CreateRandom2DArray(int countOfRow, int countOfColums)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            array[i, j] = Math.Round(random.Next(-100, 101) + random.NextDouble(), 2);
+            array[i, j] = Math.Round(random.Next(-100, 101) + random.NextDouble(), 1);
 
         }
     }
