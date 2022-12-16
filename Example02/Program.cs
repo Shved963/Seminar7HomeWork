@@ -13,11 +13,13 @@ int row = Common.Helper.IntoInt();
 int colums = Common.Helper.IntoInt();
 
 int[,] array = CreateRandom2DArray(5, 5);
-
 Common.Helper.PrintArray(array);
-(int, bool) meaning = TryGetValue(array, row, colums);
 
+(int, bool) meaning = TryGetValue(array, row, colums);
 PrintResult(meaning);
+
+
+
 
 void PrintResult((int, bool) meaning)
 {
@@ -30,6 +32,8 @@ void PrintResult((int, bool) meaning)
         Console.WriteLine($"{meaning.Item2} Элемента с такой позицией {(row, colums)} не существует");
     }
 }
+
+
 
 (int, bool) TryGetValue(int[,] array, int row, int colums)
 {
@@ -50,7 +54,6 @@ void PrintResult((int, bool) meaning)
 
     return (num, notExist);
 }
-
 
 
 
